@@ -1,7 +1,13 @@
+import { Blog } from "interfaces/Blog";
 import Image from "next/image";
 import Link from "next/link";
+import { FunctionComponent } from "react";
 
-export const BlogItem = ({ blog }: any) => {
+interface Props {
+  blog: Blog
+}
+
+export const BlogItem: FunctionComponent<Props> = ({ blog }) => {
   return (
     <div className="group">
       <div className="h-80 aspect-w-1 aspect-h-1 w-full rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-40">
@@ -10,7 +16,7 @@ export const BlogItem = ({ blog }: any) => {
             <div className="relative h-80 aspect-w-1 aspect-h-1 w-full rounded-md bg-gray-200 group-hover:opacity-75 lg:aspect-none lg:h-40">
               <Image
                 priority
-                layout="fill"
+                fill
                 objectFit="cover"
                 src={blog.coverImage}
                 className="rounded-lg hover:cursor-pointer"

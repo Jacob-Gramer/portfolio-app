@@ -3,9 +3,14 @@ import { BlogList } from 'components/blogs';
 import { PortfolioList } from 'components/portfolios/';
 import Link from "next/link";
 import { BaseLayout } from 'components/layout';
-import { getBlog, getBlogFileNames } from 'lib/md';
+import { getBlogs } from 'lib/blogs';
+import { Blog } from 'interfaces/Blog';
 
-const Home: NextPage = () => {
+interface Props {
+  blogs: Blog[]
+}
+
+const Home: NextPage<Props> = ({ blogs }) => {
   return (
     <BaseLayout>
       <h2
@@ -17,7 +22,7 @@ const Home: NextPage = () => {
             </a>
           </Link>
       </h2>
-      <BlogList />
+      <BlogList blogs={blogs}/>
       <br></br>
       <h2
         className="text-2xl font-bold tracking-tight text-gray-900">
@@ -35,15 +40,9 @@ const Home: NextPage = () => {
 
 export const getStaticProps: GetStaticProps = () => {
   // getBlogFileNames
-  const blogFileNames = getBlogFileNames();
-  blogFileNames.forEach((file) => {
-    // getBlog
-    const blogContent = getBlog(file);
-    console.log(blogContent)
-  })
-
+  const blogs = getBlogs();
   return {
-    props: {}
+    props: { blogs }
   }
 }
 
