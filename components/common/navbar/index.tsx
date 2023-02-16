@@ -3,11 +3,8 @@ import Link from "next/link";
 import { Fragment } from 'react'
 import { Popover, Transition } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import { navigation } from "./navigation";
 
-const navigation = [
-  { name: 'Blogs', href: '/blogs' },
-  { name: 'Portfolio', href: '/portfolios' },
-]
 
 const Navbar = () => {
   return (
