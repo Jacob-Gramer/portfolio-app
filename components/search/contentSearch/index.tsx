@@ -1,16 +1,47 @@
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
-import { ChangeEvent, useEffect, useState } from "react";
+import { ChangeEvent, useEffect, useRef, useState } from "react";
 import contentIndexer from "lib/client/ContentIndexer";
 import { SearchContent } from "interfaces/Markdown";
 
 const ContentSearch = () => {
+  const ref = useRef<HTMLInputElement>(null);
+  const [results, setResults] = useState<SearchContent[]>([]);
+  const [query, setQuery] = useState('');
 
-  const [results, setResults] = useState<SearchContent[]>([])
+  const handleClickOutside = () => {
+    setResults([]);
+    setQuery('');
+  }
+
+  useEffect(() => {
+
+    const callback = (e: MouseEvent) => {
+      if (
+        results.length > 0 && ref.current && !ref.current.contains(e.target as Node)) {
+        handleClickOutside();
+      }
+    }
+
+    const escapeKeyCallback = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && results.length > 0) {
+        handleClickOutside();
+      }
+    }
+
+    document.addEventListener("click", callback);
+    document.addEventListener("keydown", escapeKeyCallback)
+
+    return () => {
+      document.removeEventListener("click", callback);
+      document.removeEventListener("keydown", escapeKeyCallback);
+    }
+  }, [results.length])
 
   const performSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
     const results = contentIndexer.search(value);
     setResults(results);
+    setQuery(value);
   }
 
   return (
@@ -23,6 +54,8 @@ const ContentSearch = () => {
           <MagnifyingGlassIcon className="h-5 w-5 text-gray-400" aria-hidden="true" />
         </div>
         <input
+          value={query}
+          ref={ref}
           onChange={performSearch}
           id="search-input"
           autoComplete="off"
@@ -31,28 +64,22 @@ const ContentSearch = () => {
           placeholder="Search for anything"
         />
       </div>
-      { false &&
+      { results.length > 0 &&
         <ul
           className="w-80 border-solid border rounded-md z-10 bg-white max-h-80 overflow-auto absolute select is-multiple"
           role="listbox">
-          <li
-            onClick={() =>{}}
-            className={`hover:bg-indigo-600 hover:text-white p-3 relative cursor-pointer`}>
-            <div className="font-bold text-sm truncate">Found Blog Title 1</div>
-            <p className="truncate text-sm">Found Blog Desc 1</p>
-            <span
-              className="mt-2 text-xs text-white bg-gray-800 px-2 py-1 rounded-xl">blogs
-            </span>
-          </li>
-          <li
-            onClick={() =>{}}
-            className={`hover:bg-indigo-600 hover:text-white p-3 relative cursor-pointer`}>
-            <div className="font-bold text-sm truncate">Found Blog Title 2</div>
-            <p className="truncate text-sm">Found Blog Desc 2</p>
-            <span
-              className="mt-2 text-xs text-white bg-gray-800 px-2 py-1 rounded-xl">portfolios
-            </span>
-          </li>
+          {results.map(result =>
+            <li
+              key={result.slug}
+              onClick={() =>{}}
+              className={`hover:bg-indigo-600 hover:text-white p-3 relative cursor-pointer`}>
+              <div className="font-bold text-sm truncate">{result.title}</div>
+              <p className="truncate text-sm">{result.description}</p>
+              <span
+                className="mt-2 text-xs text-white bg-gray-800 px-2 py-1 rounded-xl">{result.category}
+              </span>
+            </li>
+            )}
         </ul>
       }
     </>
