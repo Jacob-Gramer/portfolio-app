@@ -5,6 +5,8 @@ import Link from "next/link";
 import { BaseLayout } from 'components/layout';
 import { getBlogs } from 'lib/blogs';
 import { Blog } from 'interfaces/Blog';
+import { saveSearchData } from 'lib/md';
+import { getPortfolios } from 'lib/portfolios';
 
 interface Props {
   blogs: Blog[]
@@ -41,6 +43,12 @@ const Home: NextPage<Props> = ({ blogs }) => {
 export const getStaticProps: GetStaticProps = () => {
   // getBlogFileNames
   const blogs = getBlogs();
+  const portfolios = getPortfolios();
+
+  console.log(portfolios);
+
+  saveSearchData(blogs);
+
   return {
     props: { blogs }
   }
