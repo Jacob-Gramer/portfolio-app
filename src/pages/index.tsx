@@ -17,7 +17,15 @@ interface Props {
 const Home: NextPage<Props> = ({ blogs, portfolios }) => {
   return (
     <BaseLayout>
-
+      <h2
+        className="text-2xl font-bold tracking-tight text-gray-900">
+          Blogs
+          <Link legacyBehavior href="/blogs">
+            <a className='text-sm ml-1 text-indigo-600'>
+              (See All)
+            </a>
+          </Link>
+      </h2>
       <BlogList blogs={blogs}/>
       <br></br>
       <h2
@@ -46,7 +54,10 @@ export const getStaticProps: GetStaticProps = () => {
   saveSearchData(content);
 
   return {
-    props: { blogs, portfolios }
+    props: {
+      blogs: blogs.slice(0,4),
+      portfolios: portfolios.slice(0,4)
+    }
   }
 }
 
