@@ -32,9 +32,6 @@ function Copyright() {
   return (
     <>
       &copy;
-      <Link color="inherit" href="/">
-        XY
-      </Link>{' '}
       {new Date().getFullYear()}
     </>
   );
@@ -63,7 +60,7 @@ const Footer = () => {
             </a>
           ))}
         </div>
-        <p className="mt-8 text-center text-base text-gray-400"><Copyright />, All rights reserved.</p>
+        <p className="mt-8 text-center text-base text-gray-400"><Copyright />, Built by Jacob Gramer.</p>
       </div>
     </footer>
   )
