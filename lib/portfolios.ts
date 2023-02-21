@@ -1,6 +1,6 @@
 import { Portfolio } from "interfaces/Portfolio";
 import { join } from "path";
-import { getAllItems, getDir, getFileNames, getItemInPath } from "./md";
+import { getAllItems, getDir, getFileNames, getItemInPath, markdownToHtml } from "./md";
 
 
 const PORTFOLIO_DIR = getDir("/content/portfolios");
@@ -11,6 +11,10 @@ const getPortfolio = (fileName: string): Portfolio => {
   return portfolio;
 };
 
+const getPortfolioSlugs = () => {
+  return getPortfoliosFileNames().map(fileName => fileName.replace(/\.md$/, ''))
+}
+
 const getPortfoliosFileNames = () => {
   return getFileNames(PORTFOLIO_DIR);
 };
@@ -20,4 +24,18 @@ const getPortfolios = (): Portfolio[] => {
   return getAllItems(names, getPortfolio) as Portfolio[];
 };
 
-export { getPortfolios }
+const getPortfolioBySlug = (slug: string) => {
+  const fileName = slug + '.md';
+  return getPortfolio(fileName);
+}
+
+const getPortfolioBySlugWithMarkdown = async (slug: string): Promise<Portfolio> => {
+  const portfolio = getPortfolioBySlug(slug);
+  portfolio.content = await markdownToHtml(portfolio.content);
+  return portfolio;
+}
+
+export {
+  getPortfolios,
+  getPortfolioBySlugWithMarkdown,
+  getPortfolioSlugs }
