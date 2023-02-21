@@ -5,7 +5,6 @@ import { join } from "path";
 import { remark } from "remark";
 import html from "remark-html";
 import remarkGfm from "remark-gfm";
-import { Blog } from "interfaces/Blog";
 
 const getDir = (path: string) => join(process.cwd(), path);
 
