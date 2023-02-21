@@ -106,12 +106,6 @@ const Navbar = () => {
               <div className="px-4">
               <ContentSearch />
               </div>
-              <a
-                href="#"
-                className="block w-full bg-gray-50 px-5 py-3 text-center font-medium text-indigo-600 hover:bg-gray-100"
-              >
-                Log in
-              </a>
             </div>
           </Popover.Panel>
         </Transition>
