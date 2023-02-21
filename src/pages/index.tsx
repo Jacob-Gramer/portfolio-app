@@ -47,9 +47,11 @@ export const getStaticProps: GetStaticProps = () => {
   const blogs = getBlogs();
   const portfolios = getPortfolios();
 
-  console.log(portfolios);
-
-  saveSearchData(blogs);
+  const content = {
+    blogs,
+    portfolios
+  }
+  saveSearchData(content);
 
   return {
     props: { blogs, portfolios }
