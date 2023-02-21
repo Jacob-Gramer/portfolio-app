@@ -19,8 +19,12 @@ const getItemInPath = (filePath: string): MarkdownItem => {
     return { ...data, content } as MarkdownItem;
 };
 
-const getAllItems = (fileNames: string[], get: (name: string) => MarkdownItem) => {
-    const items = fileNames.map((name) => get(name));
+const getAllItems = (
+    fileNames: string[],
+    get: (name: string) => MarkdownItem) => {
+        const items = fileNames
+            .map((name) => get(name))
+            .sort((a, b) => (a.date > b.date ? -1 : 1));
     return items;
 };
 
