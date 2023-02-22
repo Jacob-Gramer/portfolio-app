@@ -29,11 +29,11 @@ export const BlogItem: FunctionComponent<Props> = ({ blog }) => {
       </div>
       <div className="mt-4 flex justify-between">
         <div>
-          <h3 className="text-sm text-gray-700 font-bold">
+          <h3 className="text-sm text-gray-700 dark:text-gray-300 font-bold">
             <span aria-hidden="true" className="inset-0" />
               { shortify(blog.title) }
           </h3>
-          <p className="mt-1 text-sm text-gray-500">
+          <p className="mt-1 text-sm text-gray-500 dark:text-gray-400">
             { shortify(blog.description) }
           </p>
         </div>
@@ -41,7 +41,7 @@ export const BlogItem: FunctionComponent<Props> = ({ blog }) => {
       <Link
         legacyBehavior
         href={`/blogs/${blog.slug}`}>
-        <a className="text-sm font-bold text-gray-700">
+        <a className="text-sm font-bold text-gray-700 dark:text-indigo-300">
           Read More
         </a>
       </Link>

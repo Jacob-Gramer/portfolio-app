@@ -26,12 +26,12 @@ const BlogHeader: FunctionComponent<Props> = ({ blog }) => {
             </a>
           </div>
           <div className="ml-3">
-            <p className="text-sm font-medium text-gray-900 !mb-0">
+            <p className="text-sm font-medium text-gray-900 dark:text-gray-500 !mb-0">
               <a href="#" className="hover:underline">
                 {blog.author}
               </a>
             </p>
-            <div className="flex space-x-1 text-sm text-gray-500">
+            <div className="flex space-x-1 text-sm text-gray-500 dark:text-gray-300">
               <time dateTime="{date}">{blog.date}</time>
             </div>
           </div>
@@ -40,9 +40,9 @@ const BlogHeader: FunctionComponent<Props> = ({ blog }) => {
           {/* Social Links Here */}
         </div>
       </div>
-      <h1 className="font-bold text-4xl mb-1">{blog.title}</h1>
-      <h2 className="blog-detail-header-subtitle mb-2 text-xl text-gray-600">{blog.description}</h2>
-      <div className="h-96 bg-black mx-auto w-full relative">
+      <h1 className="font-bold text-4xl mb-1 dark:text-gray-300">{blog.title}</h1>
+      <h2 className="blog-detail-header-subtitle mb-2 text-xl text-gray-600 dark:text-gray-400">{blog.description}</h2>
+      <div className="h-96 bg-black dark:bg-gray-400 mx-auto w-full relative">
         <Image
           priority
           fill

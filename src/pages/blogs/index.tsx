@@ -12,7 +12,7 @@ const BlogsPage: NextPage<Props> = ({ blogs }) => {
   return (
     <PageLayout pageTitle="All Blogs">
       <h2
-        className="text-2xl font-bold tracking-tight text-gray-900">
+        className="text-2xl font-bold tracking-tight text-gray-900 dark:text-gray-300">
           All Blogs
       </h2>
       <BlogList blogs={blogs} />

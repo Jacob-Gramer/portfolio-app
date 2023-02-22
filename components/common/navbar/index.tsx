@@ -6,7 +6,6 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import { navigation } from "./navigation";
 import { ContentSearch } from "components/search";
 
-
 const Navbar = () => {
   return (
     <>
@@ -19,7 +18,6 @@ const Navbar = () => {
       >
         <polygon points="50,0 100,0 50,100 0,100" />
       </svg>
-
       {/* NAVIGATION START */}
       <Popover>
         <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
@@ -34,22 +32,23 @@ const Navbar = () => {
                       height={30}
                       alt="Your Company"
                       className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=400"
                     />
                   </a>
                 </Link>
                 <div className="-mr-2 flex items-center md:hidden">
-                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                  <Popover.Button className="inline-flex items-center justify-center rounded-md bg-white dark:bg-gray-300 p-2 text-gray-500 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                     <span className="sr-only">Open main menu</span>
                     <Bars3Icon className="h-6 w-6" aria-hidden="true" />
                   </Popover.Button>
                 </div>
+
               </div>
             </div>
             <div className="hidden md:ml-10 md:block md:space-x-8 md:pr-4">
               {navigation.map((item) => (
                 <Link legacyBehavior key={item.name} href={item.href}>
-                  <a className="font-medium text-gray-500 hover:text-gray-900">
+                  <a className="font-medium text-gray-500 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-500">
                     {item.name}
                   </a>
                 </Link>

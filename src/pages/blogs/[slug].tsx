@@ -13,11 +13,14 @@ const BlogDetail: NextPage<Props> = ({ blog }) => {
   return (
     <>
       <PageLayout pageTitle={blog.title}>
-        <div className="w-2/3 m-auto">
+        <div className="w-2/3 m-auto dark:text-gray-400">
           <BlogHeader blog={blog}/>
-          <article className="prose lg:prose-lg markdown-image-50">
+          <article className="prose dark:prose-headings:text-gray-300 dark:prose-a:text-gray-300
+          dark:prose-strong:text-gray-300
+          dark:prose-code:text-gray-300
+          dark:prose-p:text-gray-300  markdown-image-50 dark:text-gray-400">
             {/* Blog Content Here */}
-            <div dangerouslySetInnerHTML={{ __html: blog.content }} />
+            <div dangerouslySetInnerHTML={{ __html: blog.content }} className="dark:text-gray-400"/>
           </article>
         </div>
       </PageLayout>

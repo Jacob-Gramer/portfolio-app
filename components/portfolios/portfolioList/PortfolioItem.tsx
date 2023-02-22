@@ -19,7 +19,7 @@ export const PortfolioItem: FunctionComponent<Props> = ({ portfolio }) => {
           className="h-full w-full object-cover object-center"
         />
       </div>
-      <h3 className="mt-6 text-sm text-gray-500">
+      <h3 className="mt-6 text-sm text-gray-500 dark:text-gray-400">
         <Link legacyBehavior href={`/portfolios/${portfolio.slug}`}>
           <a>
             <span className="absolute inset-0" />
@@ -27,7 +27,7 @@ export const PortfolioItem: FunctionComponent<Props> = ({ portfolio }) => {
           </a>
         </Link>
       </h3>
-      <p className="text-base font-semibold text-gray-900">{ shortify(portfolio.description) }</p>
+      <p className="text-base font-semibold text-gray-900 dark:text-gray-200">{ shortify(portfolio.description) }</p>
     </div>
   )
 }
