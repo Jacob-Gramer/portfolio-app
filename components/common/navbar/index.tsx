@@ -32,7 +32,7 @@ const Navbar = () => {
                       height={30}
                       alt="Your Company"
                       className="h-8 w-auto sm:h-10"
-                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=400"
+                      src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
                     />
                   </a>
                 </Link>
@@ -73,14 +73,14 @@ const Navbar = () => {
             focus
             className="absolute inset-x-0 top-0 z-10 origin-top-right transform p-2 transition md:hidden"
           >
-            <div className="rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5">
+            <div className="rounded-lg bg-white dark:bg-slate-700 shadow-md ring-1 ring-black ring-opacity-5">
               <div className="flex items-center justify-between px-5 pt-4">
                 <div>
                   <Image
                     height={20}
                     width={20}
                     className="h-8 w-auto"
-                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
+                    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=300"
                     alt=""
                   />
                 </div>
@@ -95,7 +95,7 @@ const Navbar = () => {
                 {navigation.map((item) => (
                   <Link legacyBehavior key={item.name} href={item.href}>
                     <a
-                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-gray-900"
+                      className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-indigo-100 hover:text-gray-900 dark:hover:text-gray-700"
                     >
                       {item.name}
                     </a>

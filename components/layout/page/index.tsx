@@ -1,4 +1,3 @@
-import DarkMode from 'components/common/navbar/darkmode';
 import Head from 'next/head';
 import { FunctionComponent, PropsWithChildren } from 'react';
 import { Footer, Navbar } from '../../common';
