@@ -1,15 +1,37 @@
 ---
-title: Software Engineer Siemens
-description: Working as C++ and C# software engineer
-employee: Filip Jerga
+title: Job Board Site
+description: Built out a job board site with a team using Next.js
+employee: Jacob Gramer
 employmentTime: 10
-employeeImage: https://images.unsplash.com/photo-1622473590773-f588134b6ce7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50
-coverImage: https://images.unsplash.com/photo-1622473590773-f588134b6ce7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1370&q=50
-date: "2022-05-20"
+mainPage: https://res.cloudinary.com/dbvgiuj6d/image/upload/v1673819746/Personal%20Site/ezgif.com-gif-maker_ayhfvh.gif
+coverImage: https://res.cloudinary.com/dbvgiuj6d/image/upload/v1672785690/Personal%20Site/Screenshot_from_2023-01-03_16-41-18_e2vtrg.png
+date: "2022-10-10"
 highlights: [
-  "C# & C++ Programming",
-  "Working on the medical Ultrasound device",
-  "Experience with a parsing framework for medical data"
+  "Next.js framework",
+  "Authentication using Auth0",
+  "MongoDB used to store relevant information"
+]
+techStack: [
+  "JavaScript",
+  "Next.JS",
+  "Auth0",
+  "Axios",
+  "React Bootstrap",
+  "Google Maps API"
 ]
 ---
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+This job board was the final capstone project from my time at Hack Reactor.  I worked with a team of five other developers to build a site to the specifications of the client that we get through a series of planning meetings with them.
+\
+\
+The home page is set up to serve as a landing page for any users coming to the site, regardless of whether they have logged in or not.  Users can navigate using the navbar on top, or scroll through the page to see the available services, customer testimonials, as well as a footer containing company info and a contact link.
+\
+\
+![Gif of Home Page](https://res.cloudinary.com/dbvgiuj6d/image/upload/v1673819746/Personal%20Site/ezgif.com-gif-maker_ayhfvh.gif)
+\
+\
+Authentication for the site was set up using the identity platform Auth0.  Auth0 allows the users to easily register a new account with their email and password, or just through their Google account, and it also allowed us to define the user's role (client, employee, or manager).
+\
+\
+Another responsibility of mine was to design the dashboard for employers to see all jobs that had been requested by clients and assign the jobs to employees based on how many hours the employee had remaining on their schedules.
+
+

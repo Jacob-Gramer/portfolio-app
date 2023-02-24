@@ -4,7 +4,8 @@ import { MarkdownItem } from "./Markdown";
 export interface Portfolio extends MarkdownItem {
   coverImage: string;
   employee: string;
-  employeeImage: string;
+  mainPage: string;
   employmentTime: number;
   highlights: string[];
+  techStack: string[];
 }

@@ -8,6 +8,7 @@ const Header = () => {
           <span className="block xl:inline">Welcome to my</span>{' '}
           <span className="block text-indigo-600 dark:text-indigo-400 xl:inline">own little space</span>
         </h1>
+        <br/>
         <p className="mt-3 text-base text-gray-500 dark:text-gray-300 sm:mx-auto sm:mt-5 sm:max-w-xl sm:text-lg md:mt-5 md:text-xl ">
           My name is Jacob Gramer and I am a software developer. Feel free to check my projects and explore some of my journey in tech.
         </p>
