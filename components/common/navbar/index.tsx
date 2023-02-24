@@ -9,7 +9,7 @@ import { ContentSearch } from "components/search";
 const Navbar = () => {
   return (
     <>
-      <svg
+      {/* <svg
         className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
         fill="currentColor"
         viewBox="0 0 100 100"
@@ -17,7 +17,7 @@ const Navbar = () => {
         aria-hidden="true"
       >
         <polygon points="50,0 100,0 50,100 0,100" />
-      </svg>
+      </svg> */}
       {/* NAVIGATION START */}
       <Popover>
         <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
