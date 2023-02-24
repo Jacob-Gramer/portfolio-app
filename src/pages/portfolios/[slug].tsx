@@ -3,7 +3,6 @@ import { Portfolio } from "interfaces/Portfolio";
 import { getPortfolioBySlugWithMarkdown, getPortfolioSlugs } from "lib/portfolios";
 import { GetStaticPaths, GetStaticProps, NextPage } from "next";
 import { ParsedUrlQuery } from "querystring";
-import Image from "next/image";
 import Link from "next/link";
 
 type Props = {
@@ -35,8 +34,6 @@ const PortfolioDetail: NextPage<Props> = ({ portfolio }) => {
                   </svg>
                 </Link>
               </span>
-
-
             </div>
             <div >
               <div>
