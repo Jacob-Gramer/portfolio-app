@@ -21,7 +21,7 @@ const Header = () => {
             <a
               href="/cv.pdf"
               target="_blank"
-              className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-200 px-8 py-3 text-base font-medium text-indigo-700 hover:bg-indigo-200 md:py-4 md:px-10 md:text-lg"
+              className="flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-200 px-8 py-3 text-base font-medium text-indigo-600 hover:bg-indigo-300 md:py-4 md:px-10 md:text-lg"
             >
               CV
             </a>
